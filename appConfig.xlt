@@ -1,0 +1,24 @@
+{
+	"appName": "哲哲的遗言",
+	"appPackageName": "top.app114514",
+	"appVersionName": "2.8",
+	"appVersionCode": 114514,
+	"data": {		
+		"启用顶栏": false,
+		"顶栏标题": "CODE",
+		"顶栏颜色": "#ff99cc",
+		"横屏": false,
+		"显示状态栏": true,
+		"启用进度条": true,
+		"进度条颜色": "#00000000",
+		"支持打开外部应用": true,
+		"提示打开外部应用": false,
+		"启动页面": "index.html"
+	},
+	"indexPages": [
+		
+	],
+	"extraHeaders": {
+		
+	}
+}

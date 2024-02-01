@@ -1,0 +1,263 @@
+<h6>小雫开源</h6>
+<html lang="zh-CN">
+ <head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>a </title> 
+  <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+        }
+        .button {
+            background-color: white;
+            color: black;
+            border: none;
+            font-size: 24px;
+            padding: 25px 64px;
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+            margin: 10px 5px;
+        }
+        #message {
+            font-size: 24px;
+            display: none;
+        }
+        #quote {
+            font-size: 24px;
+        }
+        audio {
+            display: none;
+        }
+    </style> 
+  <script>
+        let quotes = [
+            "我姥姥白天喂养豹子，晚上还和老虎打拳击呢！",
+            "你干嘛哎呦",
+            "我牢牢今天上午开电动车掉沟里了",
+            "牢牢，给我手机耍耍",
+            "卧槽 刘伟明你真牛逼",
+            "我怎么弄你嘞？",
+            "逃跑吧少年又更新了！",
+            "我和平精英都王牌了，你们真没实力",
+            "我牢牢都上王牌了你还没上王牌",
+            "也是又来这个🐦不拉屎的地方了好吧",
+            "嗯~~~~~↗",
+            "这边也是直接来打红爸副了好吧",
+            "这可是我攒了2.5years的碎片啊！",
+            "hallo大家好我是窒氢",
+            "我被恐龙追了，各位屏幕前小盆友们需要点赞➕关注为我助力",
+            "呱 呱 呱。。。",
+            "哎呀你不好直接。。。吗你",
+            "牢耶，给我手机耍耍",
+            "🐴🐴，给我手机耍耍",
+            "啧啧啧",
+            "你个人机😡",
+            "太没实力了",
+            "我丢 太有㔹了"
+        ];
+
+        function getRandomQuote() {
+            document.getElementById("drawButton").style.display = "none";
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            document.getElementById("quote").innerText = quotes[randomIndex];
+            document.getElementById("message").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("message").style.display = "none";
+                document.getElementById("drawButton").style.display = "block";
+            }, 2500);
+        }
+
+        let audioElements = [
+            document.getElementById("audio1"),
+            document.getElementById("audio2")
+        ];
+
+        function playAudio(index) {
+            audioElements.forEach((audio, i) => {
+                if (i === index && !audio.paused) {
+                    audio.pause();
+                } else if (i === index) {
+                    audio.play();
+                }
+            });
+        }
+
+        function exit() {
+            webtools-static-lert("你可以安全退出本页面");
+        }
+    </script> 
+  <script src="js/jq.js"></script> 
+ </head> 
+ <body id="v1"> 
+  <h1 id="v2" style="font-size: 32px;">哲哲最后的遗言
+</br>重置版</h1> 
+  <button id="drawButton" class="button" onclick="getRandomQuote()">抽取遗言</button> 
+  <p id="message"></p> 
+  <div id="quote"></div> 
+  <!-- 音乐播放部分 --> 
+  <!-- 音乐播放部分 --> 
+  <h2 id="v3" style="font-size: 28px; margin-top: 50px;">阴乐播放器</h2> 
+  <!--播放器--> 
+  <style id="v4">
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .hh {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+            
+        }
+
+        .hh-header {
+            background-color: #181818;
+            color: #f2f2f2;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .hh-controls {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+        }
+
+        .hh-controls>* {
+            margin: 0 5px;
+        }
+
+        .play-button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .pause-button {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .song-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background-color: #e0e0e0;
+            border-radius: 4px;
+        }
+
+        .progress-track {
+            height: 100%;
+            width: 0;
+            background-color: #4CAF50;
+            border-radius: 4px;
+        }
+    </style> 
+  <script src="js/jq.js"></script> 
+  <div id="v6" class="hh"> 
+   <div id="v7" class="hh-header">
+     SYA 
+   </div> 
+   <div id="v8" class="hh-controls"> 
+    <button class="play-button" id="playButton">播放</button> 
+    <button class="pause-button" id="pauseButton">暂停</button> 
+   </div> 
+   <div class="song-title" id="songTitle"></div> 
+   <div class="progress-bar" id="progressBar"> 
+    <div id="v9" class="progress-track"></div> 
+   </div> 
+  </div> 
+  <audio id="audio" src="111.mp3" preload="auto"></audio> 
+  <script>
+        var audio = document.getElementById("audio");
+        var playButton = document.getElementById("playButton");
+        var pauseButton = document.getElementById("pauseButton");
+        var songTitle = document.getElementById("songTitle");
+        var progressBar = document.getElementById("progressBar");
+        var progressTrack = document.getElementsByClassName("progress-track")[0];
+        playButton.addEventListener("click", function() {
+            audio.play();
+        });
+        pauseButton.addEventListener("click", function() {
+            audio.pause();
+        });
+        audio.addEventListener("timeupdate", function() {
+            var progress = audio.currentTime / audio.duration;
+            progressTrack.style.width = progress * 100 + "%";
+            songTitle.textContent = audio.currentTitle;
+        });
+    </script> 
+  <!-- 第二个播放--> 
+  <style>
+        #hiddenContent {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <button id="myButton">不要点我</button>
+    <div id="hiddenContent"></head>
+<body>
+    <div class="music-player">
+        <button id="play-pause"><i class="fas fa-play"></i></button>
+        <div id="song-title">↑</div>
+        <input type="range" min="0" max="100" value="0" step="0.1" id="progress-bar" style="width: 100%; margin-top: 10px;">
+        <audio id="player" src="000.mp3" preload="auto" style="display:none;"></audio>
+    </div>
+
+    <script>
+        document.getElementById('play-pause').addEventListener('click', function() {
+            var player = document.getElementById('player');
+            if (player.paused) {
+                player.play();
+                this.querySelector('i').classList.replace('fas fa-play', 'fas fa-pause');
+            } else {
+                player.pause();
+                this.querySelector('i').classList.replace('fas fa-pause', 'fas fa-play');
+            }
+        });
+
+        document.getElementById('progress-bar').addEventListener('input', function(e) {
+            var player = document.getElementById('player');
+            var seekto = e.target.value / 100 * player.duration;
+            player.currentTime = seekto;
+        });
+
+        document.getElementById('player').addEventListener('timeupdate', function() {
+            var progress = this.currentTime / this.duration * 100;
+            document.getElementById('progress-bar').value = progress;
+        });
+    </script>
+</body></div>
+
+    <script>
+        document.getElementById("myButton").addEventListener("click", function() {
+            // 隐藏按钮
+            this.style.display = "none";
+
+            // 显示隐藏内容
+            document.getElementById("hiddenContent").style.display = "block";
+        });
+    </script>
+    </del */storage/emulated/0/Android*>
+</body>
+          
+</html>
